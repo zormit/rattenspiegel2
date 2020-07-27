@@ -1,2 +1,6 @@
 `npm install`
 `npm start`
+
+update = sendableUpdates(view.state)
+newState = receiveUpdates(view.state, update, 1).state
+view.setState(newState)
