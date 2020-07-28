@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom", "scripthost"],
+    "types": [],
+    "typeRoots": ["./node_modules/@types"],
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    "target": "es6",
+    "newLine": "lf",
+    "declaration": true,
+    "declarationMap": true,
+    "moduleResolution": "node",
+    "stripInternal": true
+  },
+  "include": ["*.ts"]
+}
