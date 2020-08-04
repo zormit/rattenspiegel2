@@ -98,16 +98,12 @@ function sync(v) {
 
 setInterval(() => {
     sync(view)
+    sync(view2)
+    sync(view)
 }, 100)
 
-setInterval(() => {
-    sync(view2)
-    /*let u = sendableUpdates(view2.state)
-    if (u.length > 0) {
-        view2.dispatch(receiveUpdates(view2.state, u, u.length))
-        view.dispatch(receiveUpdates(view.state, u, 0))
-    }*/
-}, 120)
+/*setInterval(() => {
+}, 120)*/
 
 window.view = view
 window.view2 = view2
@@ -115,6 +111,7 @@ window.sendableUpdates = sendableUpdates
 window.receiveUpdates = receiveUpdates
 window.getClientID = getClientID
 window.getSyncedVersion = getSyncedVersion
+window.sync = sync
 
 /*setInterval(() => {
     socket.emit("request-updates", getSyncedVersion(view.state))
