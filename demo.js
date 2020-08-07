@@ -79,6 +79,16 @@ function syncBoth() {
     sync(view2)
 }
 
+document.getElementById("editor").addEventListener("click", (event) => {
+    let pos = view.posAtCoords({x: event.clientX, y: event.clientY})
+    let domElement = view.domAtPos(pos)
+    if (domElement.node?.parentElement?.className == "cm-zebralink") {
+        let linkText = domElement.node?.data
+        console.log("Clicked on " + linkText)
+        document.location = "#" + linkText
+    }
+})
+
 window.view = view
 window.view2 = view2
 window.sendableUpdates = sendableUpdates
