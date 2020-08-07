@@ -6,10 +6,11 @@ import {
     getClientID,
     getSyncedVersion,
 } from "@codemirror/next/collab"
+import {linker} from "./linker.js"
 
 let state = EditorState.create({
     doc: ``,
-    extensions: [basicSetup, collab()],
+    extensions: [basicSetup, collab(), linker()],
 })
 let state2 = EditorState.create({
     doc: ``,
@@ -86,3 +87,4 @@ window.getClientID = getClientID
 window.getSyncedVersion = getSyncedVersion
 window.sync = sync
 window.syncBoth = syncBoth
+window.linker = linker
